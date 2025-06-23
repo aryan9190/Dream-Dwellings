@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width" initial-scale="1" />
+    <title>Dream Dwellings</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header>
+        <h1>🌙 Dream Dwellings</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dwellings.html">Explore</a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-text">
+            <h2>Welcome to your dream escape.</h2>
+            <p>Explore cozy cottages, floating huts, and sky-high treehouses. Let your imagination rest.</p>
+        </div>
+        <img src="assets/moonlight-cottage.jpg" alt="Moonlight Cottage">
+    </main>
+
+    <section class="music-player">
+        <h3>Background Music</h3>
+        <button id="toggle-music">Toggle Music</button>
+        <audio id="bg-music" loop>
+            <source src="assets/music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <footer>
+        🌲 Built for relaxation and dreams.
+    </footer>
+
+    <script>
+        const music = document.getElementById('bg-music');
+        const toggleBtn = document.getElementById('toggle-music');
+        toggleBtn.onclick = () => {
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause()
+            }
+        }
+    </script>
+
+</body>
+</html>
