@@ -37,16 +37,36 @@
     </footer>
 
     <script>
-        const music = document.getElementById('bg-music');
-        const toggleBtn = document.getElementById('toggle-music');
-        toggleBtn.onclick = () => {
-            if (music.paused) {
-                music.play();
-            } else {
-                music.pause()
-            }
-        }
-    </script>
+  // 1. Toggle Music
+  function toggleMusic() {
+    const music = document.getElementById('bg-music');
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
+  }
+
+  // 2. Greet User
+  function greetUser() {
+    alert("Welcome to Dream Dwellings 🌙");
+  }
+
+  // 3. Change Header Color
+  function changeHeaderColor() {
+    const colors = ["#cce3dc", "#f9e0bb", "#cddafd"];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    document.querySelector("header").style.backgroundColor = randomColor;
+  }
+
+  // Run greetUser on load
+  document.addEventListener("DOMContentLoaded", () => {
+    greetUser();
+    document.querySelector("header").addEventListener("click", changeHeaderColor);
+    document.getElementById("toggle-music").addEventListener("click", toggleMusic);
+  });
+</script>
+
 
 </body>
 </html>
