@@ -24,6 +24,56 @@
         ✨ All homes are fictional... or are they?
     </footer>
 
-    <script src="script.js"></script>
+
+    <script>
+  function getHomes() {
+    const cozyHomes = [
+      {
+        name: "Cozy Treehouse",
+        description: "Nestled in the arms of an ancient oak, this home is the perfect skyward retreat.",
+        image: "assets/cozy-treehouse.jpg"
+      },
+      {
+        name: "Moonlight Cottage",
+        description: "Bathed in moonlight every night, this cottage brings calm to restless minds.",
+        image: "assets/moonlight-cottage.jpg"
+      }
+    ];
+
+    const moreHomes = [
+      {
+        name: "Floating Hut",
+        description: "Hovering gently above a silent lake, this hut is the definition of peace.",
+        image: "assets/floating-hut.jpg"
+      }
+    ];
+
+    return [...cozyHomes, ...moreHomes];
+  }
+
+  function renderHomeCard(home) {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <img src="${home.image}" alt="${home.name}">
+      <h3>${home.name}</h3>
+      <p>${home.description}</p>
+    `;
+    return card;
+  }
+
+  function renderAllHomes() {
+    const homes = getHomes();
+    const container = document.getElementById("homes");
+    homes.forEach(home => {
+      const card = renderHomeCard(home);
+      container.appendChild(card);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", renderAllHomes);
+</script>
+
+    
 </body>
 </html>
